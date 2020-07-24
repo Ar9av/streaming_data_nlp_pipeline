@@ -74,9 +74,9 @@ The windows should look something like this producing the necessary output.
 
 
 3 tasks : 
-    1) Scraping Data (``prod.py``)
-    2) Sentiment Analysis (``consumer.py``)
-    3) Time Series Forecasting (``time_series.py``)
+    1) Scraping Data (``prod.py``) <br />
+    2) Sentiment Analysis (``consumer.py``) <br />
+    3) Time Series Forecasting (``time_series.py``) <br />
 
 Run in async matter but waits for the response from others through 3 redis channels which is used for publishing and listening.
 
