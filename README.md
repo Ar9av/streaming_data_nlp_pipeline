@@ -66,7 +66,7 @@ Replace ``python`` with ``python3``
 
 The windows should look something like this producing the necessary output.
 
-![3-terminals](https://github.com/Ar9av/transformer-nmt-chatbot/blob/master/resources/terminals.png)
+![3-terminals](https://github.com/Ar9av/streaming_data_nlp_pipeline/blob/master/resources/terminals.png)
 
 
 3 tasks : 1) Scraping Data (``prod.py``)
