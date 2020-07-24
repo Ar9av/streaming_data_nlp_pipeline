@@ -52,6 +52,7 @@ def normalize(df):
     sampled_df = pd.DataFrame()
     sampled_df['Date'] = sampled_dates
     sampled_df['Score'] = sampled_scores
+    print(f"Overall Sentiment across {str(min_date)} to {str(max_date)} : {sum(l) / len(l)}")
     return dff
 
 data_list = []

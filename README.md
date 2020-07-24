@@ -1,5 +1,7 @@
 # Real Time Streaming Data Sentiment Analysis 
 
+Real Time Company Sentiment Analysis and Forecasting -  Day by day sentiment(positive/negative/neutral) of the company (or query). 
+
 ### Installation
 - Clone this repo to your local machine using
 ```shell
