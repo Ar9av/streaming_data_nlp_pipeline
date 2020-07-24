@@ -73,9 +73,10 @@ The windows should look something like this producing the necessary output.
 ![3-terminals](https://github.com/Ar9av/streaming_data_nlp_pipeline/blob/master/resources/terminals.png)
 
 
-3 tasks : 1) Scraping Data (``prod.py``)
-          2) Sentiment Analysis (``consumer.py``)
-          3) Time Series Forecasting (``time_series.py``)
+3 tasks : 
+    1) Scraping Data (``prod.py``)
+    2) Sentiment Analysis (``consumer.py``)
+    3) Time Series Forecasting (``time_series.py``)
 
 Run in async matter but waits for the response from others through 3 redis channels which is used for publishing and listening.
 
