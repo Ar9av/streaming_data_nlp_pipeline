@@ -1,1 +1,78 @@
-# streaming_data_nlp_pipeline
+# Real Time Streaming Data Sentiment Analysis 
+
+### Installation
+- Clone this repo to your local machine using
+```shell
+$ git clone https://github.com/Ar9av/streaming_data_nlp_pipeline.git
+```
+change the working directory
+
+```shell
+$ cd streaming_data_nlp_pipeline
+```
+
+### Setup / Requirements
+
+- Install the requirements using the following commands
+
+```shell
+$ pip install -r requirements.txt
+```
+
+- Make sure you have Redis
+
+In case not , Run the following to install and start redis-server
+
+#### Redis Installation
+
+```shell
+$ cd
+$ wget http://download.redis.io/releases/redis-6.0.6.tar.gz
+$ tar xzf redis-6.0.6.tar.gz
+$ cd redis-6.0.6
+$ make
+```
+
+#### Redis Server Start
+
+```shell
+$ src/redis-server
+```
+
+
+Once the redis server is started 
+
+### Configuring the Parameter
+
+Cange the parameters in ``config.yml`` and change the ``COMPANY_NAME`` to the desired query and run the following command.
+
+
+- Now in different terminal windows run the following:
+
+```shell
+$ python consumer/consumer.py
+```
+
+```shell
+$ python producer/prod.py
+```
+
+```shell
+$ python time_series_analytics/time_series.py
+```
+
+If the above throws error , probably you have different versions of python installed in your system.
+Replace ``python`` with ``python3``
+
+The windows should look something like this producing the necessary output.
+
+![3-terminals](https://github.com/Ar9av/transformer-nmt-chatbot/blob/master/resources/terminals.png)
+
+
+3 tasks : 1) Scraping Data (``prod.py``)
+          2) Sentiment Analysis (``consumer.py``)
+          3) Time Series Forecasting (``time_series.py``)
+
+Run in async matter but waits for the response from others through 3 redis channels which is used for publishing and listening.
+
+
