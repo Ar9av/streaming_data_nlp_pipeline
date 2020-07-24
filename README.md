@@ -56,15 +56,17 @@ $ python consumer/consumer.py
 ```
 
 ```shell
-$ python producer/prod.py
+$ python time_series_analytics/time_series.py
 ```
 
 ```shell
-$ python time_series_analytics/time_series.py
+$ python producer/prod.py
 ```
 
 If the above throws error , probably you have different versions of python installed in your system.
 Replace ``python`` with ``python3``
+
+NOTE: Maintain the order of run to get the result instantenously as new results take time.
 
 The windows should look something like this producing the necessary output.
 

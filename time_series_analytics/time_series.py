@@ -52,8 +52,7 @@ def normalize(df):
     sampled_df = pd.DataFrame()
     sampled_df['Date'] = sampled_dates
     sampled_df['Score'] = sampled_scores
-    print(f"Overall Sentiment across {str(min_date)} to {str(max_date)} : {sum(l) / len(l)}")
-    return dff
+    return dff, min_date, max_date
 
 data_list = []
 flag = False
@@ -64,8 +63,10 @@ for post in sub.listen():
     data_list.append(data)
     if len(data_list) == BATCH:
         df = convert_to_df(data_list)
-        df = normalize(df)
+        df, min_date, max_date = normalize(df)
         tomorrows_prediction = build_model(df, flag)
+        avg_score = sum(sampled_scores) / len(sampled_scores)
+        print(f"Overall Sentiment across {str(min_date)} to {str(max_date)} : {avg_score}")
         flag = True
         serialized_prediction = mq.serialize_message_data(tomorrows_prediction.tolist())
         r.publish('results', serialized_prediction)
